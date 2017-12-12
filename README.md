@@ -60,7 +60,9 @@ keyboardAppearance | string | 'default' | Determines the color of the keyboard.
 fontFamily | string | `System` | The font family to be used.
 fontSize | number | 20 | Sets the font size.
 allDataOnEmptySearch | boolean | `false` | Search results behave as a `.filter`, returning all data when the input is an empty string.
-
+boxBackgroundColor | string | `transparent`| Change the textInput background color
+borderRadius | number | `null` | Change the textInput box radius
+borderColor | string | `null` | Change the textInput border color
 
 
 ## Usage
@@ -138,7 +140,7 @@ Contributing to `react-native-searchbar` is easy! With four simple steps:
 1. `git pull origin master` to pull the latest code
 1. `npm install` to install the project's dependencies
 1. `git checkout -b the-name-of-my-branch` to create a branch (use something short and comprehensible, such as: `fix-styling-of-search-bar`).
-  
+
 ### Make the change
 
 ### Test the change
