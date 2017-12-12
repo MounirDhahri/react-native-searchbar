@@ -1,43 +1,43 @@
 {
-  "name": "react-native-searchbar",
-  "version": "1.13.0",
-  "description": "A pretty awesome search bar for React Native",
-  "keywords": [
-    "react-native",
-    "search",
-    "bar",
-    "searchbar",
-    "animated",
-    "ios",
-    "android"
-  ],
-  "main": "index.js",
-  "scripts": {
-    "fix": "npm run lint -- --fix && npm run prettier",
-    "lint": "eslint index.js",
-    "prepublishOnly": "npm run test",
-    "prettier": "prettier --config .prettierrc --write 'index.js'",
-    "prettier:diff": "prettier --config .prettierrc --list-different 'index.js'",
-    "test": "npm run lint && npm run prettier:diff"
+  "_from": "react-native-searchbar",
+  "_id": "react-native-searchbar@1.13.0",
+  "_inBundle": false,
+  "_integrity": "sha512-HhJjDwGQPQbwcBzNcTOKvpK38X3rPeVAFuWfW1IEj/HY6MLC3w3k8GoEKx1uNB8xtwDGa0i4W3w3lfw3pQmuGA==",
+  "_location": "/react-native-searchbar",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "react-native-searchbar",
+    "name": "react-native-searchbar",
+    "escapedName": "react-native-searchbar",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
   },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/react-native-searchbar/-/react-native-searchbar-1.13.0.tgz",
+  "_shasum": "f0e5109e3258603ecffd73007aea9bd44c7de9db",
+  "_spec": "react-native-searchbar",
+  "_where": "/Users/redeyef/projects/UpWork/react-native-schoolevent",
   "author": {
     "name": "Dave Olsen",
     "email": "do@localz.co",
     "url": "https://github.com/daveols"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/localz/react-native-searchbar.git"
-  },
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/localz/react-native-searchbar/issues"
   },
-  "homepage": "https://github.com/localz/react-native-searchbar#readme",
+  "bundleDependencies": false,
   "dependencies": {
     "lodash": "^4.16.4",
     "react-native-vector-icons": "^4.4.2"
   },
+  "deprecated": false,
+  "description": "A pretty awesome search bar for React Native",
   "devDependencies": {
     "babel-eslint": "^8.0.1",
     "eslint": "^4.8.0",
@@ -61,5 +61,31 @@
     "rules": {
       "react-native/no-inline-styles": 0
     }
-  }
+  },
+  "homepage": "https://github.com/localz/react-native-searchbar#readme",
+  "keywords": [
+    "react-native",
+    "search",
+    "bar",
+    "searchbar",
+    "animated",
+    "ios",
+    "android"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "react-native-searchbar",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/localz/react-native-searchbar.git"
+  },
+  "scripts": {
+    "fix": "npm run lint -- --fix && npm run prettier",
+    "lint": "eslint index.js",
+    "prepublishOnly": "npm run test",
+    "prettier": "prettier --config .prettierrc --write 'index.js'",
+    "prettier:diff": "prettier --config .prettierrc --list-different 'index.js'",
+    "test": "npm run lint && npm run prettier:diff"
+  },
+  "version": "1.13.0"
 }

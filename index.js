@@ -61,11 +61,11 @@ export default class Search extends Component {
 
   static defaultProps = {
     data: [],
-    placeholder: 'Search',
+    placeholder: 'Chercher un événement',
     backButtonAccessibilityLabel: 'Navigate up',
     closeButtonAccessibilityLabel: 'Clear search text',
     heightAdjust: 0,
-    backgroundColor: 'white',
+    backgroundColor: '#efefef',
     iconColor: 'gray',
     textColor: 'gray',
     selectionColor: 'lightskyblue',
@@ -239,8 +239,13 @@ export default class Search extends Component {
       closeButton,
       closeButtonAccessibilityLabel,
       backCloseSize,
+      backCloseIcon,
       fontSize,
-      editable
+      editable,
+      boxBackgroundColor,
+      borderRadius,
+      borderColor,
+      borderWidth
     } = this.props;
     return (
       <Animated.View
@@ -254,11 +259,11 @@ export default class Search extends Component {
         {this.state.show && (
           <View style={[styles.navWrapper, { backgroundColor }]}>
             {Platform.OS === 'ios' &&
-              iOSPadding && <View style={{ height: 20 }} />}
+              iOSPadding && <View style={{ height: 10 }} />}
             <View
               style={[
                 styles.nav,
-                { height: (Platform.OS === 'ios' ? 52 : 62) + heightAdjust }
+                { height: (Platform.OS === 'ios' ? 52 : 52) + heightAdjust }
               ]}>
               {!hideBack && (
                 <TouchableOpacity
@@ -273,8 +278,8 @@ export default class Search extends Component {
                     </View>
                   ) : (
                     <Icon
-                      name="arrow-back"
-                      size={backCloseSize}
+                      name={backCloseIcon ? backCloseIcon : 'arrow-back'}
+                      size={30}
                       style={{
                         color: iconColor,
                         padding: heightAdjust / 2 + 10
@@ -289,6 +294,10 @@ export default class Search extends Component {
                 style={[
                   styles.input,
                   {
+                    backgroundColor: boxBackgroundColor,
+                    borderRadius,
+                    borderColor,
+                    borderWidth,
                     fontSize: fontSize,
                     color: textColor,
                     fontFamily: fontFamily,
@@ -296,10 +305,11 @@ export default class Search extends Component {
                     marginTop: Platform.OS === 'ios' ? heightAdjust / 2 + 10 : 0
                   }
                 ]}
-                selectionColor={selectionColor}
+                selectionColor={'white'}
                 onChangeText={input => this._onChangeText(input)}
                 onSubmitEditing={() =>
-                  onSubmitEditing ? onSubmitEditing() : null}
+                  onSubmitEditing ? onSubmitEditing() : null
+                }
                 onFocus={() => (onFocus ? onFocus() : null)}
                 onBlur={this._handleBlur}
                 placeholder={placeholder}
@@ -312,6 +322,7 @@ export default class Search extends Component {
                 keyboardAppearance={keyboardAppearance}
                 editable={editable}
               />
+
               <TouchableOpacity
                 accessible={true}
                 accessibilityComponentType="button"
@@ -328,6 +339,7 @@ export default class Search extends Component {
                     name={'close'}
                     size={backCloseSize}
                     style={{
+                      top: 0,
                       color:
                         hideX || this.state.input == ''
                           ? backgroundColor
@@ -372,8 +384,9 @@ const styles = StyleSheet.create({
   input: {
     ...Platform.select({
       ios: { height: 30 },
-      android: { height: 50 }
+      android: { height: 30 }
     }),
-    width: Dimensions.get('window').width - 120
+    width: Dimensions.get('window').width - 120,
+    padding: 7
   }
 });
